@@ -53,11 +53,13 @@ h1 {
     border-radius: 10px;
 }
 
-#add-btn:hover {
+#add-btn:hover,
+.book-card button:hover {
     cursor: pointer;
 }
 
-#add-btn:active {
+#add-btn:active,
+.book-card button:active {
     color: white;
     transform: translate(2px, 3px);
 }
@@ -68,5 +70,52 @@ h1 {
     border: 2px solid gray;
     border-radius: 5px;
     background-color: whitesmoke;
-    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    justify-items: center;
+}
+
+/* Book cards */
+.book-card {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: grid;
+    width: 15rem;
+    height: 9rem;
+    grid-template-columns: 15px 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.book-title {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    grid-column: 1 / 5;
+}
+
+.book-author {
+    grid-column: 1 / 5;
+}
+
+.book-pages {
+    grid-column: 1 / 5;
+}
+
+.book-card .read-checkbox {
+    justify-self: start;
+}
+
+.book-card button {
+    width: 70%;
+    justify-self: end;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: .9rem;
 }
